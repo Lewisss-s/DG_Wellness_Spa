@@ -1,0 +1,22 @@
+# Environment and secret files
+.env
+.env.*
+!.env.example
+
+# Dependencies
+/vendor/
+/node_modules/
+
+# Logs and temporary files
+*.log
+*.tmp
+
+# Backups and database dumps
+*.bak
+*.sql
+*.zip
+
+# Operating system files
+.DS_Store
+Thumbs.db
+desktop.ini
