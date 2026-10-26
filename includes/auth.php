@@ -8,7 +8,7 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
 function requireLogin(): void
 {
     if (!isset($_SESSION["user_id"], $_SESSION["role"])) {
-        header("Location: /DG_Wellness_Spa/login.php");
+        header("Location: /DG_Wellness_Spa/index.php");
         exit;
     }
 }

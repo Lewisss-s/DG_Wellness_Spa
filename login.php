@@ -60,6 +60,20 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+<header class="home-header">
+        <a class="spa-brand" href="/DG_Wellness_Spa/index.php">
+            <span class="brand-mark">DG</span>
+            <span>
+                <strong>DG Wellness Spa</strong>
+                <small>Relax. Refresh. Renew.</small>
+            </span>
+        </a>
+
+        <a class="outline-button" href="/DG_Wellness_Spa/index.php">
+            Back to Home
+        </a>
+    </header>
+
 
 <main class="auth-container">
     <h1>DG Wellness Spa</h1>
