@@ -13,8 +13,9 @@ if (isset($_SESSION["user_id"], $_SESSION["role"])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book an Appointment | DG Wellness Spa</title>
-    <link rel="stylesheet" href="/DG_Wellness_Spa/assets/css/style.css">
+    <link rel="stylesheet" href="/DG_Wellness_Spa/assets/css/booking.css">
 </head>
+
 <body class="booking-entry-page">
 
     <header class="home-header">

@@ -220,14 +220,20 @@ function e($value): string {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DG Wellness Spa | Relax, Refresh, Renew</title>
     <meta name="description" content="Discover DG Wellness Spa services and book your next self-care appointment.">
-    <link rel="stylesheet" href="/DG_Wellness_Spa/assets/css/style.css">
+    <link rel="stylesheet" href="/DG_Wellness_Spa/assets/css/index.css">
 </head>
 <body class="spa-home">
 
+
 <header class="home-header">
     <a class="spa-brand" href="/DG_Wellness_Spa/index.php">
-        <span class="brand-mark">DG</span>
-        <span>
+        <img
+            src="/DG_Wellness_Spa/assets/images/Brandlogo.png"
+            alt="DG Wellness Spa Logo"
+            class="brand-logo"
+        >
+
+        <span class="brand-text">
             <strong>DG Wellness Spa</strong>
             <small>Relax. Refresh. Renew.</small>
         </span>
@@ -238,7 +244,9 @@ function e($value): string {
         <a href="#about">About</a>
         <a href="#services">Services</a>
         <a href="#contact">Contact</a>
-        <a class="book-button" href="/DG_Wellness_Spa/book.php">
+
+        <a class="book-button"
+           href="/DG_Wellness_Spa/book.php">
             Book Now
         </a>
     </nav>
@@ -247,18 +255,25 @@ function e($value): string {
 <main>
     <section class="home-hero" id="home">
         <div class="hero-content">
-            <p class="hero-eyebrow">YOUR TIME FOR SELF-CARE</p>
+            <p class="hero-eyebrow">
+                YOUR TIME FOR SELF-CARE
+            </p>
 
-            <h1>Relax your body.<br>Refresh your mind.</h1>
+            <h1>
+                Relax your body.<br>
+                <span>Refresh your mind.</span>
+            </h1>
 
             <p class="hero-description">
-                Take a break from your busy day and give yourself the care
-                you deserve. Discover a welcoming space for relaxation,
-                beauty, and wellness at DG Wellness Spa.
+                Take a break from your busy day and give yourself
+                the care you deserve. Discover a welcoming space
+                for relaxation, beauty, and wellness at
+                DG Wellness Spa.
             </p>
 
             <div class="hero-actions">
-                <a class="book-button hero-book" href="/DG_Wellness_Spa/book.php">
+                <a class="book-button hero-book"
+                   href="/DG_Wellness_Spa/book.php">
                     Book an Appointment
                 </a>
 
@@ -268,17 +283,13 @@ function e($value): string {
             </div>
 
             <p class="hero-note">
-                Your wellness journey starts with a moment for yourself.
+                Your wellness journey starts with a moment
+                for yourself.
             </p>
         </div>
-
-        <div class="hero-visual" aria-label="Spa atmosphere">
-            <div class="hero-visual-overlay">
-                <span>MAKE TIME FOR YOU</span>
-                <h2>A moment of calm,<br>a feeling of renewal.</h2>
-            </div>
-        </div>
     </section>
+</main>
+
 
     <section class="home-about section-padding" id="about">
         <div class="section-heading">

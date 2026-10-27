@@ -1,0 +1,559 @@
+
+/* ==========================================
+   DG WELLNESS SPA
+   BOOKING ENTRY PAGE — LUXURY DESIGN
+========================================== */
+
+:root {
+    --booking-black: #17100b;
+    --booking-brown: #382316;
+    --booking-gold: #d6ad55;
+    --booking-gold-light: #f0d99b;
+    --booking-cream: #fff8ed;
+    --booking-muted: #d1c1ad;
+    --booking-border: rgba(214, 173, 85, 0.4);
+}
+
+/* RESET */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+}
+
+body.booking-entry-page {
+    position: relative;
+    isolation: isolate;
+
+    display: flex;
+    flex-direction: column;
+
+    min-height: 100vh;
+    margin: 0;
+
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--booking-cream);
+    background: var(--booking-black);
+
+    overflow-x: hidden;
+}
+
+/* ==========================================
+   BLURRED BACKGROUND
+   Uses the same background image as index.php
+========================================== */
+
+body.booking-entry-page::before {
+    content: "";
+    position: fixed;
+
+    /* Extend past viewport to prevent blur edges */
+    inset: -15px;
+    z-index: -2;
+
+    background-image: url("/DG_Wellness_Spa/assets/images/background1.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    filter: blur(5px);
+    transform: scale(1.03);
+    pointer-events: none;
+}
+
+/* Dark overlay makes the content stand out */
+
+body.booking-entry-page::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(18, 10, 5, 0.82),
+            rgba(35, 19, 9, 0.76),
+            rgba(14, 9, 5, 0.88)
+        );
+
+    pointer-events: none;
+}
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.booking-entry-page .home-header {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    min-height: 100px;
+    padding: 16px 6%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    background: rgba(17, 10, 5, 0.72);
+    border-bottom: 1px solid var(--booking-border);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+/* Brand */
+
+.booking-entry-page .spa-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+
+    color: var(--booking-cream);
+    text-decoration: none;
+}
+
+.booking-entry-page .brand-mark {
+    width: 58px;
+    height: 58px;
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid var(--booking-gold);
+    border-radius: 50%;
+
+    color: var(--booking-gold-light);
+    background: rgba(214, 173, 85, 0.08);
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -2px;
+}
+
+.booking-entry-page .spa-brand > span:last-child {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.booking-entry-page .spa-brand strong {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.booking-entry-page .spa-brand small {
+    color: #d7a45d;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+/* Back to home */
+
+.booking-entry-page .outline-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 44px;
+    padding: 11px 20px;
+
+    color: var(--booking-gold-light);
+    background: transparent;
+
+    border: 1px solid var(--booking-border);
+    border-radius: 4px;
+
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+
+    transition:
+        color 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.booking-entry-page .outline-button:hover {
+    color: var(--booking-black);
+    background: var(--booking-gold);
+    border-color: var(--booking-gold);
+}
+
+/* ==========================================
+   MAIN CONTENT
+   Centers the card vertically and horizontally
+========================================== */
+
+.booking-entry-main {
+    position: relative;
+    z-index: 1;
+
+    flex: 1;
+
+    width: 100%;
+    padding: 60px 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ==========================================
+   BOOKING CARD
+========================================== */
+
+.booking-entry-card {
+    position: relative;
+    isolation: isolate;
+
+    width: 100%;
+    max-width: 510px;
+    padding: 48px 45px 40px;
+
+    text-align: center;
+
+    background: rgba(25, 17, 11, 0.91);
+
+    border: 1px solid var(--booking-border);
+    border-radius: 8px;
+
+    box-shadow:
+        0 25px 75px rgba(0, 0, 0, 0.48),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    animation: booking-card-appear 0.65s ease both;
+}
+
+/* Decorative gold line */
+
+.booking-entry-card::before {
+    content: "";
+    position: absolute;
+
+    top: -1px;
+    left: 20%;
+    width: 60%;
+    height: 2px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        var(--booking-gold),
+        transparent
+    );
+}
+
+/* Small decorative icon */
+
+.booking-entry-icon {
+    width: 62px;
+    height: 62px;
+    margin: 0 auto 23px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid var(--booking-border);
+    border-radius: 50%;
+
+    color: var(--booking-gold-light);
+    background: rgba(214, 173, 85, 0.08);
+
+    font-size: 29px;
+}
+
+/* Eyebrow */
+
+.booking-entry-card .section-eyebrow {
+    margin: 0 0 16px;
+
+    color: var(--booking-gold);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    line-height: 1.8;
+}
+
+/* Main heading */
+
+.booking-entry-card h1 {
+    margin: 0 0 20px;
+
+    color: var(--booking-cream);
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(32px, 4vw, 41px);
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+/* Description */
+
+.booking-entry-description {
+    max-width: 365px;
+    margin: 0 auto 32px;
+
+    color: var(--booking-muted);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+/* ==========================================
+   LOGIN AND REGISTER BUTTONS
+========================================== */
+
+.booking-entry-button {
+    width: 100%;
+    min-height: 54px;
+    margin: 0 0 14px;
+    padding: 16px 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 4px;
+
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    text-decoration: none;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+/* Primary login button */
+
+.booking-entry-card .book-button {
+    color: #211508;
+
+    background: linear-gradient(
+        135deg,
+        #f0d99b,
+        #d0a347
+    );
+
+    border: 1px solid #e5c578;
+
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.18);
+}
+
+.booking-entry-card .book-button:hover {
+    background: #f8e8bd;
+    border-color: #f8e8bd;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* Secondary registration button */
+
+.booking-entry-card .outline-button {
+    color: var(--booking-gold-light);
+    background: rgba(255, 255, 255, 0.015);
+
+    border: 1px solid rgba(214, 173, 85, 0.55);
+}
+
+.booking-entry-card .outline-button:hover {
+    color: var(--booking-black);
+    background: var(--booking-gold-light);
+    border-color: var(--booking-gold-light);
+
+    transform: translateY(-2px);
+}
+
+/* Existing-account note */
+
+.booking-entry-note {
+    margin: 18px 0 0;
+    padding-top: 22px;
+
+    color: #bca991;
+    border-top: 1px solid rgba(214, 173, 85, 0.16);
+
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+.booking-entry-page .home-footer {
+    position: relative;
+    z-index: 1;
+
+    width: 100%;
+    padding: 20px 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(15, 9, 5, 0.78);
+    border-top: 1px solid rgba(214, 173, 85, 0.2);
+}
+
+.booking-entry-page .home-footer p {
+    margin: 0;
+
+    color: #bba78e;
+    font-size: 12px;
+    line-height: 1.8;
+    text-align: center;
+}
+
+/* ==========================================
+   ANIMATION
+========================================== */
+
+@keyframes booking-card-appear {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 700px) {
+    .booking-entry-page .home-header {
+        min-height: 82px;
+        padding: 13px 20px;
+    }
+
+    .booking-entry-page .brand-mark {
+        width: 48px;
+        height: 48px;
+        font-size: 19px;
+    }
+
+    .booking-entry-page .spa-brand strong {
+        font-size: 20px;
+    }
+
+    .booking-entry-page .spa-brand small {
+        font-size: 12px;
+    }
+
+    .booking-entry-page .home-header > .outline-button {
+        padding: 10px 13px;
+        font-size: 12px;
+    }
+
+    .booking-entry-main {
+        padding: 45px 20px;
+    }
+
+    .booking-entry-card {
+        max-width: 470px;
+        padding: 40px 32px 32px;
+    }
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 420px) {
+    .booking-entry-page .home-header {
+        gap: 10px;
+        padding: 12px;
+    }
+
+    .booking-entry-page .spa-brand {
+        gap: 9px;
+        min-width: 0;
+    }
+
+    .booking-entry-page .brand-mark {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+
+    .booking-entry-page .spa-brand strong {
+        font-size: 16px;
+    }
+
+    .booking-entry-page .spa-brand small {
+        font-size: 10px;
+    }
+
+    .booking-entry-page .home-header > .outline-button {
+        min-height: 38px;
+        padding: 8px 10px;
+        font-size: 10px;
+        white-space: nowrap;
+    }
+
+    .booking-entry-main {
+        padding: 35px 16px;
+    }
+
+    .booking-entry-card {
+        padding: 34px 22px 28px;
+    }
+
+    .booking-entry-icon {
+        width: 52px;
+        height: 52px;
+        font-size: 24px;
+    }
+
+    .booking-entry-card h1 {
+        font-size: 31px;
+    }
+
+    .booking-entry-description {
+        font-size: 13px;
+    }
+
+    .booking-entry-button {
+        min-height: 50px;
+        padding: 14px;
+        font-size: 12px;
+    }
+}
+
+/* Respect reduced-motion preferences */
+
+@media (prefers-reduced-motion: reduce) {
+    .booking-entry-card {
+        animation: none;
+    }
+
+    .booking-entry-page *,
+    .booking-entry-page *::before,
+    .booking-entry-page *::after {
+        transition: none !important;
+    }
+}

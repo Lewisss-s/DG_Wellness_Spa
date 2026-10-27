@@ -1,0 +1,1173 @@
+
+/* =========================
+   GLOBAL STYLES
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #17100b;
+    color: #fffaf2;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* =========================
+   HEADER / NAVIGATION
+========================= */
+
+.home-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100px;
+    padding: 13px 19px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+
+    background: rgba(18, 10, 4, 0.76);
+    border-bottom: 1px solid rgba(218, 165, 32, 0.15);
+    z-index: 1000;
+}
+
+/* BRAND */
+
+.spa-brand {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-shrink: 0;
+    color: #fffaf2;
+}
+
+.brand-logo {
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+    border-radius: 50%;
+    border: 1px solid #d9ad32;
+    background: #080604;
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.brand-text strong {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 23px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.brand-text small {
+    color: #d69a43;
+    font-size: 17px;
+    white-space: nowrap;
+}
+
+/* NAVIGATION LINKS */
+
+.home-nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 25px;
+}
+
+.home-nav > a:not(.book-button) {
+    color: #f0b900;
+    font-size: 25px;
+    font-weight: 600;
+    transition: color 0.25s ease;
+}
+
+.home-nav > a:not(.book-button):hover {
+    color: #fff0b5;
+}
+
+/* BOOKING BUTTON */
+
+.book-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 15px 21px;
+    border-radius: 60px;
+
+    background: #fff;
+    color: #e6ad00;
+
+    font-size: 25px;
+    font-weight: 600;
+    white-space: nowrap;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.book-button:hover {
+    background: #e6b739;
+    color: #1b1007;
+    transform: translateY(-2px);
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.home-hero {
+    position: relative;
+    isolation: isolate;
+
+    min-height: 100vh;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    padding: 180px 6% 65px;
+
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(27, 13, 4, 0.88) 0%,
+            rgba(37, 19, 6, 0.68) 38%,
+            rgba(35, 17, 5, 0.12) 75%,
+            rgba(20, 10, 4, 0.08) 100%
+        ),
+        url("/DG_Wellness_Spa/assets/images/background1.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* HERO TEXT */
+
+.hero-content {
+    width: 100%;
+    max-width: 650px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-eyebrow {
+    margin: 0 0 20px;
+
+    color: #e4b94e;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 4px;
+}
+
+.hero-content h1 {
+    margin: 0 0 25px;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(42px, 4.5vw, 68px);
+    line-height: 1.15;
+    font-weight: 700;
+
+    color: #fffaf2;
+}
+
+.hero-content h1 span {
+    color: #e3b84f;
+}
+
+.hero-description {
+    max-width: 560px;
+    margin: 0 0 30px;
+
+    color: #f0e5d8;
+    font-size: 17px;
+    line-height: 1.9;
+}
+
+/* HERO BUTTONS */
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px;
+}
+
+.hero-book {
+    padding: 17px 25px;
+    font-size: 17px;
+    background: #d8ad45;
+    color: #201207;
+    border-radius: 8px;
+}
+
+.outline-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 16px 24px;
+    border: 1px solid #d8ad45;
+    border-radius: 8px;
+
+    color: #fffaf2;
+    font-size: 16px;
+    font-weight: 600;
+
+    transition: background 0.25s ease;
+}
+
+.outline-button:hover {
+    background: rgba(216, 173, 69, 0.18);
+}
+
+.hero-note {
+    margin-top: 30px;
+    color: #d5b98e;
+    font-size: 14px;
+    font-style: italic;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 1200px) {
+    .home-header {
+        padding: 14px 20px;
+        gap: 15px;
+    }
+
+    .brand-logo {
+        width: 95px;
+        height: 95px;
+    }
+
+    .brand-text strong {
+        font-size: 25px;
+    }
+
+    .brand-text small {
+        font-size: 16px;
+    }
+
+    .home-nav {
+        gap: 18px;
+    }
+
+    .home-nav > a:not(.book-button) {
+        font-size: 21px;
+    }
+
+    .home-nav .book-button {
+        padding: 17px 22px;
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 850px) {
+    .home-header {
+        position: absolute;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 14px 18px;
+    }
+
+    .brand-logo {
+        width: 75px;
+        height: 75px;
+    }
+
+    .brand-text strong {
+        font-size: 23px;
+    }
+
+    .brand-text small {
+        font-size: 15px;
+    }
+
+    .home-nav {
+        width: 100%;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 12px 20px;
+    }
+
+    .home-nav > a:not(.book-button) {
+        font-size: 16px;
+    }
+
+    .home-nav .book-button {
+        padding: 12px 18px;
+        font-size: 16px;
+    }
+
+    .home-hero {
+        min-height: 100vh;
+        padding: 220px 25px 50px;
+
+        background-position: 65% center;
+    }
+
+    .hero-content {
+        max-width: 540px;
+    }
+
+    .hero-description {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .brand-logo {
+        width: 62px;
+        height: 62px;
+    }
+
+    .brand-text strong {
+        font-size: 20px;
+    }
+
+    .brand-text small {
+        font-size: 13px;
+    }
+
+    .home-nav {
+        gap: 10px 15px;
+    }
+
+    .home-nav > a:not(.book-button) {
+        font-size: 14px;
+    }
+
+    .home-nav .book-button {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+
+    .home-hero {
+        padding: 225px 20px 45px;
+        background-position: 62% center;
+    }
+
+    .hero-content h1 {
+        font-size: 39px;
+    }
+
+    .hero-eyebrow {
+        font-size: 11px;
+        letter-spacing: 2px;
+    }
+
+    .hero-actions {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .hero-actions a {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+
+
+/* =========================================
+   DG WELLNESS SPA — LUXURY HOMEPAGE SECTIONS
+   Theme: Black | Gold | Natural Brown
+========================================= */
+
+:root {
+    --spa-black: #17110c;
+    --spa-black-soft: #21170f;
+    --spa-brown: #382316;
+    --spa-brown-light: #765035;
+    --spa-gold: #d6ad55;
+    --spa-gold-light: #f0d99b;
+    --spa-cream: #f7f0e5;
+    --spa-text: #f5eee4;
+    --spa-muted: #c9b9a5;
+    --spa-border: rgba(214, 173, 85, 0.28);
+    --spa-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+}
+
+/* =========================================
+   SHARED SECTION STYLES
+========================================= */
+
+.section-padding {
+    padding: 100px 7%;
+}
+
+.home-about,
+.home-services,
+.home-contact {
+    position: relative;
+    isolation: isolate;
+    scroll-margin-top: 30px;
+}
+
+.section-heading {
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto 55px;
+    text-align: center;
+}
+
+.section-eyebrow {
+    margin: 0 0 16px;
+    color: var(--spa-gold);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    line-height: 1.8;
+    text-transform: uppercase;
+}
+
+.section-heading h2,
+.home-cta h2,
+.home-contact h2 {
+    margin: 0 0 22px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(32px, 3.5vw, 48px);
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.section-heading > p:last-child {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+/* =========================================
+   1. ABOUT SECTION
+========================================= */
+
+.home-about {
+    overflow: hidden;
+    background:
+        radial-gradient(
+            ellipse at 50% 0%,
+            rgba(118, 80, 53, 0.22),
+            transparent 65%
+        ),
+        var(--spa-black);
+    color: var(--spa-text);
+}
+
+.home-about::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 7%;
+    right: 7%;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        var(--spa-gold),
+        transparent
+    );
+    opacity: 0.6;
+}
+
+.home-about .section-heading h2 {
+    color: var(--spa-cream);
+}
+
+.home-about .section-heading > p:last-child {
+    color: var(--spa-muted);
+}
+
+/* About highlight cards */
+
+.about-highlights {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+.highlight-card {
+    position: relative;
+    padding: 35px 30px;
+    min-height: 225px;
+
+    background: linear-gradient(
+        145deg,
+        rgba(255, 255, 255, 0.045),
+        rgba(118, 80, 53, 0.09)
+    );
+
+    border: 1px solid var(--spa-border);
+    border-radius: 5px;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease;
+}
+
+.highlight-card:hover {
+    transform: translateY(-7px);
+    border-color: var(--spa-gold);
+    background: rgba(118, 80, 53, 0.18);
+}
+
+.highlight-icon {
+    display: inline-block;
+    margin-bottom: 23px;
+    color: var(--spa-gold);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 35px;
+    line-height: 1;
+}
+
+.highlight-card h3 {
+    margin: 0 0 13px;
+    color: var(--spa-cream);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.highlight-card p {
+    margin: 0;
+    color: var(--spa-muted);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+/* =========================================
+   2. SERVICES SECTION
+   Uploaded background image used HERE ONLY
+========================================= */
+
+.home-services {
+    overflow: hidden;
+    background-color: #24150b;
+
+    background-image:
+        linear-gradient(
+            rgba(28, 15, 7, 0.48),
+            rgba(28, 15, 7, 0.65)
+        ),
+        url("/DG_Wellness_Spa/assets/images/background2.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    color: var(--spa-cream);
+}
+
+/* Soft gold lines at the section edges */
+
+.home-services::before,
+.home-services::after {
+    content: "";
+    position: absolute;
+    left: 7%;
+    right: 7%;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        var(--spa-gold),
+        transparent
+    );
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.home-services::before {
+    top: 0;
+}
+
+.home-services::after {
+    bottom: 0;
+}
+
+.home-services .section-heading {
+    position: relative;
+    z-index: 1;
+}
+
+.home-services .section-heading h2 {
+    color: #fff8ec;
+    text-shadow: 0 3px 18px rgba(0, 0, 0, 0.5);
+}
+
+.home-services .section-heading > p:last-child {
+    color: #e1d1bd;
+}
+
+/* Service cards grid */
+
+.service-grid {
+    position: relative;
+    z-index: 1;
+
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+/* Individual service cards */
+
+.home-service-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    min-width: 0;
+    padding: 30px;
+
+    background: linear-gradient(
+        145deg,
+        rgba(28, 19, 13, 0.94),
+        rgba(50, 31, 19, 0.91)
+    );
+
+    border: 1px solid rgba(214, 173, 85, 0.36);
+    border-radius: 7px;
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.home-service-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--spa-gold);
+    box-shadow: 0 18px 42px rgba(0, 0, 0, 0.35);
+}
+
+/* Service category label */
+
+.service-category {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 7px 12px;
+
+    color: var(--spa-gold-light);
+    background: rgba(214, 173, 85, 0.1);
+
+    border: 1px solid rgba(214, 173, 85, 0.3);
+    border-radius: 3px;
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+
+    overflow-wrap: anywhere;
+}
+
+/* Service name */
+
+.home-service-card h3 {
+    margin: 0 0 15px;
+    color: #fff6e9;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 1.35;
+
+    overflow-wrap: anywhere;
+}
+
+/* Service description */
+
+.home-service-card > p {
+    margin: 0 0 25px;
+    color: #d4c5b4;
+
+    font-size: 14px;
+    line-height: 1.9;
+
+    overflow-wrap: anywhere;
+}
+
+/* Price and duration */
+
+.service-details {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+
+    width: 100%;
+    margin-top: auto;
+    padding: 20px 0;
+
+    border-top: 1px solid rgba(214, 173, 85, 0.23);
+    border-bottom: 1px solid rgba(214, 173, 85, 0.23);
+}
+
+.service-details strong {
+    color: var(--spa-gold-light);
+    font-size: 21px;
+    font-weight: 700;
+}
+
+.service-details span {
+    color: #cbb8a0;
+    font-size: 12px;
+}
+
+/* Book service link */
+
+.service-book-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    margin-top: 22px;
+    color: var(--spa-gold-light);
+
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+
+    transition:
+        color 0.25s ease,
+        gap 0.25s ease;
+}
+
+.service-book-link:hover {
+    color: #fff1c7;
+    gap: 13px;
+}
+
+/* No services available */
+
+.empty-services {
+    position: relative;
+    z-index: 1;
+
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 35px;
+
+    color: #f1e1cb;
+    background: rgba(25, 16, 10, 0.85);
+    border: 1px solid var(--spa-border);
+    border-radius: 6px;
+
+    text-align: center;
+    line-height: 1.8;
+}
+
+/* View all services button */
+
+.center-action {
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.home-services .outline-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 16px 30px;
+
+    color: #f8e9c9;
+    background: rgba(22, 14, 9, 0.7);
+
+    border: 1px solid var(--spa-gold);
+    border-radius: 4px;
+
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    transition:
+        color 0.25s ease,
+        background 0.25s ease,
+        transform 0.25s ease;
+}
+
+.home-services .outline-button:hover {
+    color: #21150a;
+    background: var(--spa-gold);
+    transform: translateY(-2px);
+}
+
+/* =========================================
+   3. BOOKING CALL-TO-ACTION
+========================================= */
+
+.home-cta {
+    position: relative;
+    overflow: hidden;
+
+    padding: 90px 7%;
+    text-align: center;
+
+    background:
+        radial-gradient(
+            ellipse at 50% 0%,
+            rgba(214, 173, 85, 0.15),
+            transparent 65%
+        ),
+        linear-gradient(
+            135deg,
+            #302015,
+            #17100b 70%
+        );
+
+    border-top: 1px solid var(--spa-border);
+    border-bottom: 1px solid var(--spa-border);
+}
+
+.home-cta .section-eyebrow {
+    margin-bottom: 18px;
+}
+
+.home-cta h2 {
+    max-width: 800px;
+    margin: 0 auto 20px;
+    color: #fff4df;
+}
+
+.home-cta > p:not(.section-eyebrow) {
+    max-width: 620px;
+    margin: 0 auto 32px;
+
+    color: var(--spa-muted);
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+/* CTA button */
+
+.home-cta .hero-book {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 17px 30px;
+
+    color: #211508;
+    background: linear-gradient(
+        135deg,
+        #f0d28a,
+        #c99b3d
+    );
+
+    border: 1px solid #e8c574;
+    border-radius: 4px;
+
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.home-cta .hero-book:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.32);
+}
+
+/* =========================================
+   4. CONTACT SECTION
+========================================= */
+
+.home-contact {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 65px;
+
+    background: var(--spa-cream);
+    color: var(--spa-black);
+}
+
+.home-contact .section-eyebrow {
+    color: #9a712d;
+}
+
+.home-contact h2 {
+    max-width: 500px;
+    margin-bottom: 0;
+    color: #302015;
+}
+
+.contact-details {
+    padding: 32px;
+
+    background: #fffaf2;
+    border: 1px solid rgba(118, 80, 53, 0.2);
+    border-left: 3px solid #b78a3e;
+
+    box-shadow: 0 12px 35px rgba(53, 35, 20, 0.08);
+}
+
+.contact-details p {
+    margin: 0 0 17px;
+    color: #665343;
+    font-size: 14px;
+    line-height: 1.9;
+    overflow-wrap: anywhere;
+}
+
+.contact-details p strong {
+    color: #382518;
+}
+
+.contact-details p:first-child {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 23px;
+}
+
+.contact-details .service-book-link {
+    margin-top: 8px;
+    color: #8b6529;
+}
+
+.contact-details .service-book-link:hover {
+    color: #493018;
+}
+
+/* =========================================
+   5. FOOTER
+========================================= */
+
+.home-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+
+    padding: 25px 7%;
+
+    background: #100c08;
+    border-top: 1px solid rgba(214, 173, 85, 0.22);
+}
+
+.home-footer p {
+    margin: 0;
+    color: #b9a890;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.home-footer p:last-child {
+    color: var(--spa-gold);
+    font-family: Georgia, "Times New Roman", serif;
+    font-style: italic;
+    letter-spacing: 0.5px;
+}
+
+/* =========================================
+   6. TABLET RESPONSIVENESS
+========================================= */
+
+@media (max-width: 1000px) {
+    .section-padding {
+        padding: 75px 5%;
+    }
+
+    .about-highlights {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+    }
+
+    .service-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    .home-contact {
+        gap: 35px;
+    }
+
+    .contact-details {
+        padding: 25px;
+    }
+
+    .home-services {
+        background-attachment: scroll;
+    }
+}
+
+/* =========================================
+   7. MOBILE RESPONSIVENESS
+========================================= */
+
+@media (max-width: 600px) {
+    .section-padding {
+        padding: 60px 20px;
+    }
+
+    .section-heading {
+        margin-bottom: 35px;
+    }
+
+    .section-eyebrow {
+        font-size: 10px;
+        letter-spacing: 2.5px;
+    }
+
+    .section-heading h2,
+    .home-cta h2,
+    .home-contact h2 {
+        font-size: 32px;
+    }
+
+    .section-heading > p:last-child {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    /* About cards */
+
+    .about-highlights {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .highlight-card {
+        min-height: auto;
+        padding: 25px;
+    }
+
+    .highlight-icon {
+        margin-bottom: 16px;
+        font-size: 30px;
+    }
+
+    .highlight-card h3 {
+        font-size: 22px;
+    }
+
+    /* Services */
+
+    .home-services {
+        background-attachment: scroll;
+        background-position: center;
+    }
+
+    .service-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .home-service-card {
+        padding: 25px;
+    }
+
+    .home-service-card h3 {
+        font-size: 23px;
+    }
+
+    .service-details strong {
+        font-size: 19px;
+    }
+
+    .center-action {
+        margin-top: 35px;
+    }
+
+    .home-services .outline-button {
+        width: 100%;
+    }
+
+    /* Booking CTA */
+
+    .home-cta {
+        padding: 65px 22px;
+    }
+
+    .home-cta h2 {
+        font-size: 30px;
+    }
+
+    .home-cta > p:not(.section-eyebrow) {
+        font-size: 14px;
+    }
+
+    .home-cta .hero-book {
+        width: 100%;
+        max-width: 340px;
+        padding: 16px 20px;
+    }
+
+    /* Contact */
+
+    .home-contact {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .contact-details {
+        padding: 23px;
+    }
+
+    /* Footer */
+
+    .home-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 23px 20px;
+        gap: 5px;
+    }
+}
+
+/* =========================================
+   8. REDUCE MOTION ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
