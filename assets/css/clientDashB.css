@@ -1,0 +1,620 @@
+
+/* ==========================================
+   DG WELLNESS SPA
+   CLIENT DASHBOARD
+   Luxury Black | Gold | Natural Brown
+========================================== */
+
+:root {
+    --client-black: #17100b;
+    --client-brown: #382316;
+    --client-gold: #d6ad55;
+    --client-gold-light: #f0d99b;
+    --client-cream: #fff8ed;
+    --client-muted: #d1c1ad;
+    --client-border: rgba(214, 173, 85, 0.35);
+}
+
+/* ==========================================
+   GENERAL STYLES
+========================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+}
+
+body.client-dashboard-page {
+    position: relative;
+    isolation: isolate;
+
+    display: flex;
+    flex-direction: column;
+
+    min-height: 100vh;
+    margin: 0;
+
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--client-cream);
+    background: var(--client-black);
+
+    overflow-x: hidden;
+}
+
+.client-dashboard-page a {
+    text-decoration: none;
+}
+
+/* ==========================================
+   BACKGROUND IMAGE WITH BLUR
+========================================== */
+
+.client-dashboard-page::before {
+    content: "";
+
+    position: fixed;
+    inset: -15px;
+    z-index: -2;
+
+    background-image:
+        url("/DG_Wellness_Spa/images/background2.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    filter: blur(5px);
+    transform: scale(1.03);
+
+    pointer-events: none;
+}
+
+/* Dark overlay */
+
+.client-dashboard-page::after {
+    content: "";
+
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+
+    background: linear-gradient(
+        135deg,
+        rgba(17, 9, 4, 0.88),
+        rgba(37, 20, 10, 0.78),
+        rgba(15, 9, 5, 0.9)
+    );
+
+    pointer-events: none;
+}
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.client-header {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    min-height: 90px;
+    padding: 14px 6%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    background: rgba(17, 10, 5, 0.78);
+    border-bottom: 1px solid var(--client-border);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+/* Brand */
+
+.client-brand {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    color: var(--client-cream);
+}
+
+.client-brand-mark {
+    width: 55px;
+    height: 55px;
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid var(--client-gold);
+    border-radius: 50%;
+
+    color: var(--client-gold-light);
+    background: rgba(214, 173, 85, 0.08);
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -2px;
+}
+
+.client-brand-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.client-brand-text strong {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 23px;
+}
+
+.client-brand-text small {
+    color: #d7a45d;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+}
+
+/* Logout button */
+
+.logout-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 11px 24px;
+
+    color: var(--client-gold-light);
+    background: transparent;
+
+    border: 1px solid var(--client-border);
+    border-radius: 4px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    transition: 0.25s ease;
+}
+
+.logout-button:hover {
+    color: var(--client-black);
+    background: var(--client-gold);
+    border-color: var(--client-gold);
+}
+
+/* ==========================================
+   MAIN DASHBOARD CONTENT
+========================================== */
+
+.client-dashboard-main {
+    flex: 1;
+
+    width: 100%;
+    max-width: 1350px;
+
+    margin: 0 auto;
+    padding: 65px 35px 45px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* ==========================================
+   WELCOME SECTION
+========================================== */
+
+.welcome-section {
+    max-width: 800px;
+    margin: 0 auto 48px;
+
+    text-align: center;
+}
+
+.dashboard-eyebrow {
+    margin: 0 0 15px;
+
+    color: var(--client-gold);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3.5px;
+}
+
+.welcome-section h1 {
+    margin: 0 0 17px;
+
+    color: var(--client-cream);
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(36px, 5vw, 51px);
+    font-weight: 500;
+}
+
+.welcome-section h1 span {
+    color: var(--client-gold-light);
+}
+
+.welcome-section > p:last-child {
+    max-width: 650px;
+    margin: 0 auto;
+
+    color: var(--client-muted);
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+/* ==========================================
+   SECTION HEADING
+========================================== */
+
+.booking-section {
+    width: 100%;
+}
+
+.dashboard-section-heading {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.dashboard-section-heading h2 {
+    margin: 0 0 10px;
+
+    color: var(--client-cream);
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 29px;
+    font-weight: 500;
+}
+
+.dashboard-section-heading p {
+    margin: 0;
+
+    color: var(--client-muted);
+    font-size: 14px;
+}
+
+/* ==========================================
+   DASHBOARD SELECTION CARDS
+========================================== */
+
+.dashboard-actions {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 25px;
+    width: 100%;
+}
+
+/* Individual card */
+
+.dashboard-card {
+    position: relative;
+    isolation: isolate;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    min-height: 310px;
+    padding: 35px 28px 30px;
+
+    text-align: center;
+
+    background: rgba(26, 17, 10, 0.88);
+
+    border: 1px solid var(--client-border);
+    border-radius: 7px;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.035);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+/* Card hover */
+
+.dashboard-card:hover {
+    transform: translateY(-8px);
+
+    border-color: var(--client-gold);
+
+    background: rgba(48, 31, 18, 0.95);
+
+    box-shadow:
+        0 22px 50px rgba(0, 0, 0, 0.4),
+        0 0 20px rgba(214, 173, 85, 0.08);
+}
+
+/* Card number */
+
+.dashboard-card-number {
+    position: absolute;
+    top: 17px;
+    right: 20px;
+
+    color: rgba(214, 173, 85, 0.65);
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+/* Card icon */
+
+.dashboard-card-icon {
+    width: 68px;
+    height: 68px;
+    margin-bottom: 23px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--client-gold-light);
+    background: rgba(214, 173, 85, 0.09);
+
+    border: 1px solid var(--client-border);
+    border-radius: 50%;
+
+    font-size: 30px;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+.dashboard-card:hover .dashboard-card-icon {
+    background: rgba(214, 173, 85, 0.18);
+    transform: scale(1.08);
+}
+
+/* Card title */
+
+.dashboard-card h3 {
+    margin: 0 0 14px;
+
+    color: var(--client-cream);
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 23px;
+    font-weight: 500;
+    line-height: 1.35;
+}
+
+/* Card description */
+
+.dashboard-card p {
+    max-width: 280px;
+    margin: 0 0 25px;
+
+    color: var(--client-muted);
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+/* Card bottom link */
+
+.dashboard-card-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    margin-top: auto;
+
+    color: var(--client-gold-light);
+
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+
+    transition: gap 0.25s ease;
+}
+
+.dashboard-card-link span {
+    font-size: 18px;
+}
+
+.dashboard-card:hover .dashboard-card-link {
+    gap: 16px;
+}
+
+/* Keyboard accessibility */
+
+.dashboard-card:focus-visible,
+.logout-button:focus-visible {
+    outline: 2px solid var(--client-gold-light);
+    outline-offset: 5px;
+}
+
+/* ==========================================
+   DASHBOARD NOTE
+========================================== */
+
+.dashboard-note {
+    margin: 38px 0 0;
+
+    color: #d5b98e;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 14px;
+    font-style: italic;
+
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+.client-footer {
+    width: 100%;
+    padding: 20px 6%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    background: rgba(15, 9, 5, 0.8);
+    border-top: 1px solid rgba(214, 173, 85, 0.22);
+}
+
+.client-footer p {
+    margin: 0;
+
+    color: #bba78e;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.client-footer p:last-child {
+    color: var(--client-gold);
+    font-family: Georgia, "Times New Roman", serif;
+    font-style: italic;
+}
+
+/* ==========================================
+   TABLET RESPONSIVENESS
+========================================== */
+
+@media (max-width: 950px) {
+
+    .client-dashboard-main {
+        padding: 55px 25px;
+    }
+
+    .dashboard-actions {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+    }
+
+    .dashboard-card {
+        min-height: 290px;
+    }
+
+    .dashboard-card:last-child {
+        grid-column: 1 / -1;
+        max-width: 50%;
+        width: 100%;
+        justify-self: center;
+    }
+}
+
+/* ==========================================
+   MOBILE RESPONSIVENESS
+========================================== */
+
+@media (max-width: 600px) {
+
+    .client-header {
+        min-height: 75px;
+        padding: 12px 17px;
+    }
+
+    .client-brand {
+        gap: 9px;
+    }
+
+    .client-brand-mark {
+        width: 43px;
+        height: 43px;
+        font-size: 18px;
+    }
+
+    .client-brand-text strong {
+        font-size: 18px;
+    }
+
+    .client-brand-text small {
+        font-size: 11px;
+    }
+
+    .logout-button {
+        padding: 9px 14px;
+        font-size: 11px;
+    }
+
+    .client-dashboard-main {
+        padding: 45px 18px;
+    }
+
+    .welcome-section {
+        margin-bottom: 38px;
+    }
+
+    .welcome-section h1 {
+        font-size: 35px;
+    }
+
+    .welcome-section > p:last-child {
+        font-size: 13px;
+    }
+
+    .dashboard-section-heading h2 {
+        font-size: 25px;
+    }
+
+    .dashboard-actions {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .dashboard-card,
+    .dashboard-card:last-child {
+        width: 100%;
+        max-width: none;
+        min-height: 260px;
+        grid-column: auto;
+
+        padding: 30px 24px;
+    }
+
+    .dashboard-card h3 {
+        font-size: 22px;
+    }
+
+    .dashboard-note {
+        margin-top: 28px;
+        font-size: 12px;
+    }
+
+    .client-footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 18px;
+    }
+}
+
+/* ==========================================
+   REDUCED MOTION
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .client-dashboard-page *,
+    .client-dashboard-page *::before,
+    .client-dashboard-page *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}

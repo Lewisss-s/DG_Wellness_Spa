@@ -27,7 +27,7 @@ function redirectByRole(): void
 {
     switch ($_SESSION["role"] ?? "") {
         case "Admin":
-            header("Location: /DG_Wellness_Spa/admin/dashboard.php");
+            header("Location: /DG_Wellness_Spa/admin/appointments.php");
             exit;
 
         case "Staff":
